@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<widget xmlns="http://wirecloud.conwet.fi.upm.es/ns/macdescription/1" vendor="Cadastro Usuario" name="tela_cadastro_pessoa" version="0.1.0">
+
+    <details>
+        <title>Cadastro de Pessoa</title>
+        <homepage>https://github.com/fiware/tela_cadastro_pessoa</homepage>
+        <authors>Matheus Alves</authors>
+        <email>matheuseejam@gmail.com</email>
+        <image></image>
+        <smartphoneimage></smartphoneimage>
+        <description>Uma tela de cadastro de usuarios</description>
+        <longdescription>DESCRIPTION.md</longdescription>
+        <changelog>doc/changelog.md</changelog>
+        <doc>doc/userguide.md</doc>
+        <license>MIT</license>
+        <issuetracker>https://github.com/fiware/tela_cadastro_empresa/pessoa</issuetracker>
+    </details>
+
+    <requirements>
+    </requirements>
+
+    <preferences>
+    </preferences>
+
+    <wiring>
+    </wiring>
+
+    <contents src="index.html"/>
+    <rendering height="400px" width="30%"/>
+
+</widget>
