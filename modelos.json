@@ -1,0 +1,122 @@
+{
+    "contextElements": [
+        {
+            "type": "Empresa",
+            "isPattern": "false",
+            "id": "CNPJ",
+            "attributes": [
+                {
+                    "name": "Nome",
+                    "type": "string",
+                    "value": "NOME_DA_EMPRESA"
+                },
+                {
+                    "name": "Cede",
+                    "type": "geo:localization",
+                    "value": "COORDENADAS_DA_CEDE"
+                },
+                {
+                    "name": "Serviços",
+                    "type": "vetor_serviços",
+                    "value": [
+                        {
+                            "name": "NOME_DO_SERVIÇO",
+                            "type": "TIPO_DE-SERVIÇO",
+                            "sub_type": "DETALHES"
+                        }
+                    ]
+                },
+                {
+                    "name": "Criticas",
+                    "type": "vetor_de_inteiros",
+                    "value": [1, 2, 3]
+                }
+            ]
+        }
+    ],
+    "updateAction": "APPEND"
+}
+
+{
+    "contextElements": [
+        {
+            "type": "Crítica",
+            "isPattern": "false",
+            "id": "UM ID NUMÉRICO",
+            "attributes": [
+                {
+                    "name": "Texto",
+                    "type": "string",
+                    "value": "A CRITICA EM SI"
+                },
+                {
+                    "name": "nota",
+                    "type": "Inteiro 0-10",
+                    "value": "A NOTA"
+                },
+                {
+                    "name": "Crítico",
+                    "type": "Usuário",
+                    "value": "ID DO USUÁRIO CRITICANDO"
+                },
+                {
+                    "name": "Alvo",
+                    "type": "Empresa",
+                    "value": "CNPJ DA EMPRESA ALVO CA CRITICA"
+                }
+            ]
+        }
+    ],
+    "updateAction": "APPEND"
+}
+
+{
+    "contextElements": [
+        {
+            "type": "Usuário",
+            "isPattern": "false",
+            "id": "ID_GERADO_POR_NOSSA_APLICAÇÃO",
+            "attributes": [
+                {
+                    "name": "User_name",
+                    "type": "string",
+                    "value": "O NOME DE USUÁRIO"
+                },
+                {
+                    "name": "Senha",
+                    "type": "String",
+                    "value": "SENHA CRIPTOGRAFADA COM ALGUM HASH"
+                },
+                {
+                    "name": "Tipo",
+                    "type": "inteiro",
+                    "value": "NPIVEL DE ACESSO AO SISTEMA DESSE USUÁRIO"
+                },
+                {
+                    "name": "Endereço",
+                    "type": "vetor",
+                    "value": [
+                        {
+                            "name": "País",
+                            "value": "O PAIS DE ORIGEM"
+                        },
+                        {
+                            "name": "Estado",
+                            "value": "O estado do usuário"
+                        },
+                        {
+                            "name": "Cidade",
+                            "value": "A cidade do usuário"
+                        }
+                    ]
+                },
+                {
+                    "name": "Criticas",
+                    "type": "vetor_de_inteiros",
+                    "value": [1, 2, 3]
+                }
+            ]
+        }
+    ],
+    "updateAction": "APPEND"
+}

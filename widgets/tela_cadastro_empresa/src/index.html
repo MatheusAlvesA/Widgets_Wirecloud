@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+        <title>Cadastrar Empresa</title>
+    </head>
+    <body>
+
+          Nome:<br>
+          <input type="text" id="nome">
+          <br>
+          CNPJ:<br>
+          <input type="text" id="cnpj">
+          <br>
+          Coordenadas da cede:<br>
+          <input type="text" id="cede">
+          <br><br>
+          <input type="submit" value="Cadastrar" onclick="cadastrar()">
+
+        <b style="color: blue; display: none;" id="msgSUCESSO">Empresa inserida com sucesso!</b>
+        <b style="color: red; display: none;" id="msgFALHA">Falha ao inserir a Empresa!</b>
+
+        <script src="js/TelaCadastroEmpresa.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
