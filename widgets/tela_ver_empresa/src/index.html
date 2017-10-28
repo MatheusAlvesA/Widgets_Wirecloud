@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <title>Visualizar Empresa</title>
+    </head>
+    <body style="padding-top: 10px; padding-left: 10px; padding-right: 10px;">
+
+      <div class="row">
+        <div role="main" class="col-md-6">
+            <div class="form-group">
+              <label for="textNome" class="control-label">CNPJ:</label>
+              <input id="inputCNPJ" class="form-control" placeholder="Digite o CNPJ..." type="text" name="nome">
+            </div>
+            <button type="submit" class="btn btn-primary" onclick="consultar()">Buscar</button>
+
+            <b style="color: blue; display: none;" id="msgSUCESSO">Empresa encontrada!</b>
+            <b style="color: red; display: none;" id="msgERRO">Falha ao buscar a empresa!</b>
+        </div>
+        <div role="main" class="col-md-6">
+          <ul class="list-group">
+            <li class="list-group-item">Nome: <b id="nome"></b></li>
+            <li class="list-group-item">CNPJ: <b id="cnpj"></b></li>
+            <li class="list-group-item">Cede: <b id="cede"></b></li>
+          </ul>
+      </div>
+      </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="js/TelaVerEmpresa.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

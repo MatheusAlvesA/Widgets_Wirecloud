@@ -20,7 +20,7 @@ function cadastrar() {
 	var nome = document.getElementById('nome').value;
 	var cnpj = document.getElementById('cnpj').value;
 	var cede = document.getElementById('cede').value;
-	if(nome = '' || cnpj == '' || cede == '') return false;
+	if(nome == '' || cnpj == '' || cede == '') return false;
 
 	insert_empresa(cnpj, nome, cede, servicos_exemplo);
 

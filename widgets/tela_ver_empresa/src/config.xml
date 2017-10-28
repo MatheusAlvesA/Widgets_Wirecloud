@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<widget xmlns="http://wirecloud.conwet.fi.upm.es/ns/macdescription/1" vendor="Ver_Empresa" name="tela_ver_empresa" version="0.1.0">
+
+    <details>
+        <title>Visualizar Empresa</title>
+        <homepage>http://45.77.114.212</homepage>
+        <authors>Matheus Alves</authors>
+        <email>matheuseejam@gmail.com</email>
+        <image></image>
+        <smartphoneimage></smartphoneimage>
+        <description>Uma tela simples que dado um CNPJ retorna os dados da empresa se estiver cadastrada</description>
+        <longdescription>DESCRIPTION.md</longdescription>
+        <changelog>doc/changelog.md</changelog>
+        <doc>doc/userguide.md</doc>
+        <license>MIT</license>
+        <issuetracker></issuetracker>
+    </details>
+
+    <requirements>
+    </requirements>
+
+    <preferences>
+    </preferences>
+
+    <wiring>
+    </wiring>
+
+    <contents src="index.html"/>
+    <rendering height="300px" width="30%"/>
+
+</widget>
