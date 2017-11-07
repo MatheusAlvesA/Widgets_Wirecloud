@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<operator xmlns="http://wirecloud.conwet.fi.upm.es/ns/macdescription/1" vendor="Listar geograficamente" name="Listar Empresas" version="0.1.0">
+
+    <details>
+        <title>Listar Empresas em um Range</title>
+        <homepage>http://45.77.114.212</homepage>
+        <authors>Matheus Alves &lt;matheuseejam@gmail.com&gt;</authors>
+        <email>matheuseejam@gmail.com</email>
+        <image></image>
+        <smartphoneimage></smartphoneimage>
+        <description>Este operador recebe uma coordenada geografica e devolve uma lista de empresas naquela regiao</description>
+        <longdescription>DESCRIPTION.md</longdescription>
+        <changelog>doc/changelog.md</changelog>
+        <doc>doc/userguide.md</doc>
+        <license>MIT</license>
+        <issuetracker></issuetracker>
+    </details>
+
+    <requirements>
+        <!-- Add any extra requirements here -->
+        <!-- <feature name="${feature-name}" /> -->
+    </requirements>
+
+    <preferences>
+    </preferences>
+
+    <wiring>
+    	<inputendpoint name="location" type="text" label="Localizacao" description="Essa entrada deve receber uma geolocalizacao Geo:location" friendcode="receive_entity" />
+     	<outputendpoint name="locations" type="text" label="Localizacoes" description="Essa saida deve retornar um array de geolocalizacoes Geo:location" friendcode="send_entity" />
+    </wiring>
+
+    <scripts>
+        <script src="js/main.js"/>
+    </scripts>
+
+</operator>

@@ -62,7 +62,7 @@ function bind_empresa(cnpj, nome, cede, servicos) {
 		                },
 		                {
 		                    "name": "Cede",
-		                    "type": "geo:localization",
+		                    "type": "geo:point",
 		                    "value": cede
 		                },
 		                {
