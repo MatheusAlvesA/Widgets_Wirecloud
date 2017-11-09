@@ -26,7 +26,7 @@
 
     <wiring>
     	<inputendpoint name="location" type="text" label="Localizacao" description="Essa entrada deve receber uma geolocalizacao Geo:location" friendcode="receive_entity" />
-     	<outputendpoint name="locations" type="text" label="Localizacoes" description="Essa saida deve retornar um array de geolocalizacoes Geo:location" friendcode="send_entity" />
+     	<outputendpoint name="empresas" type="text" label="Empresas" description="Essa saida deve retornar um array de de empresas na regial passada" friendcode="send_entity" />
     </wiring>
 
     <scripts>

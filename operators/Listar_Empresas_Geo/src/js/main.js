@@ -21,15 +21,19 @@
 })();
 
 MashupPlatform.wiring.registerCallback('location', function(entity) {
-    	console.log(entity);
-    	MashupPlatform.wiring.pushEvent('locations', JOSN.stringfy( make_geo_busca( JSON.parse(entity) ) ) );
+    	var recebido = JSON.parse(entity);
+
+    	var busca = JSON.stringfy( make_geo_busca( JSON.parse(entity).Cede ) );
+
+    	console.log(busca);
+    	//MashupPlatform.wiring.pushEvent('empresas', '' );
     });
 
 /*
-	Essa função recebem uma entidade empresa e retorna uma query pronta para ser realizadas no Orion
+	Essa função recebem uma geolocalização e retorna uma query pronta para ser realizadas no Orion
 */
-function make_geo_busca(entidade) {
-	var ponto = entidade.Cede.split(' ');
+function make_geo_busca(p) {
+	var ponto = p.split(' ');
 	return {
     "entities": [
         {
