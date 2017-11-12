@@ -8,6 +8,8 @@
 
 /* globals TelaVerEmpresa, MashupPlatform */
 
+empresa = null; // Essa cariável global guarda a empresa lida
+
 window.onload = function () {
     "use strict";
     new TelaVerEmpresa();
@@ -19,19 +21,34 @@ MashupPlatform.wiring.registerCallback('empresa', function(entity) {
 });
 
 function consultar(r) {
-	if(r === null) {
+	if(r.attributes === null || r.attributes === undefined) {
 		MSGerro();
 		return false;
 	}
 
+	empresa = r;
+
 	var nome = busca(r.attributes, 'Nome');
 	var cnpj = r.id;
 	var cede = busca(r.attributes, 'position');
+	var servico = busca(r.attributes, 'Serviços')[0];
 
 	document.getElementById('nome').innerText = nome;
 	document.getElementById('cnpj').innerText = cnpj;
 	document.getElementById('cede').innerText = cede;
 
+	document.getElementById('s_nome').innerText = servico.name;
+	document.getElementById('s_tipo').innerText = servico.type;
+	document.getElementById('s_detalhes').innerText = servico.sub_type;
+
+	$("#bnt_criticas").prop("disabled", false);
+
+	return true;
+}
+
+function push_criticas() {
+	if(empresa === null) return false;
+	MashupPlatform.wiring.pushEvent('criticas', JSON.stringify(busca(empresa.attributes, 'Criticas')));
 	return true;
 }
 
