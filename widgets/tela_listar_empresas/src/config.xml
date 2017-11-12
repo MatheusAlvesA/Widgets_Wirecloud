@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<widget xmlns="http://wirecloud.conwet.fi.upm.es/ns/macdescription/1" vendor="Ver_Empresa" name="tela_ver_empresa" version="0.1.0">
+<widget xmlns="http://wirecloud.conwet.fi.upm.es/ns/macdescription/1" vendor="Listar Empresas" name="tela_listar_empresas" version="0.1.0">
 
     <details>
-        <title>Visualizar Empresa</title>
+        <title>Listar empresas</title>
         <homepage>http://45.77.114.212</homepage>
         <authors>Matheus Alves</authors>
         <email>matheuseejam@gmail.com</email>
         <image></image>
         <smartphoneimage></smartphoneimage>
-        <description>Uma tela que preenche todos os dados de uma empresa</description>
+        <description>Essa tela lista as empresas recebidas</description>
         <longdescription>DESCRIPTION.md</longdescription>
         <changelog>doc/changelog.md</changelog>
         <doc>doc/userguide.md</doc>
@@ -23,7 +23,8 @@
     </preferences>
 
     <wiring>
-    <inputendpoint name="empresa" type="text" label="Empresa" description="Essa entrada deve receber uma empresa." actionlabel="Empresa" friendcode="Empreasa"/>
+    <inputendpoint name="empresas" type="text" label="Empresas" description="Essa entrada deve receber um vetor de empresas." actionlabel="Empresas" friendcode="Empresas"/>
+    <outputendpoint name="empresa" type="text" label="Empresa" description="Essa saida vai devolver uma empresa selecionada." friendcode="Empresa"/>
     </wiring>
 
     <contents src="index.html"/>

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<operator xmlns="http://wirecloud.conwet.fi.upm.es/ns/macdescription/1" vendor="Buscar Empresa" name="buscar_empresas" version="0.1.0">
+
+    <details>
+        <title>Buscar empresa</title>
+        <homepage>http://45.77.114.212</homepage>
+        <authors>Matheus Alves &lt;matheusalves@gmail.com&gt;</authors>
+        <email>matheusalves@gmail.com</email>
+        <image></image>
+        <smartphoneimage></smartphoneimage>
+        <description>Este operator busca empresas pelo nome</description>
+        <longdescription>DESCRIPTION.md</longdescription>
+        <changelog>doc/changelog.md</changelog>
+        <doc>doc/userguide.md</doc>
+        <license>MIT</license>
+        <issuetracker></issuetracker>
+    </details>
+
+    <requirements>
+        <!-- Add any extra requirements here -->
+        <!-- <feature name="${feature-name}" /> -->
+    </requirements>
+
+    <preferences>
+    </preferences>
+
+    <wiring>
+    	<inputendpoint name="nome" type="text" label="Nome" description="Essa entrada deve receber um nome de empresa" friendcode="receive_entity" />
+     	<outputendpoint name="empresas" type="text" label="Empresas" description="Essa saida vai retornar um array de de empresas" friendcode="send_entity" />
+    </wiring>
+
+    <scripts>
+    	<script src="js/jquery.js"/>
+        <script src="js/main.js"/>
+    </scripts>
+
+</operator>

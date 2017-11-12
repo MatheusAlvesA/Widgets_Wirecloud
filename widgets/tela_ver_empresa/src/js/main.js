@@ -13,72 +13,40 @@ window.onload = function () {
     new TelaVerEmpresa();
 };
 
-function consultar() {
-	var CNPJ = document.getElementById('inputCNPJ').value;
-	var r = get_empresa(CNPJ);
+MashupPlatform.wiring.registerCallback('empresa', function(entity) {
+        var recebido = JSON.parse(entity);
+        consultar(recebido);
+});
 
+function consultar(r) {
 	if(r === null) {
 		MSGerro();
 		return false;
 	}
 
-	var nome = r.attributes[2].value;
-	var cnpj = CNPJ;
-	var cede = r.attributes[0].value;
+	var nome = busca(r.attributes, 'Nome');
+	var cnpj = r.id;
+	var cede = busca(r.attributes, 'position');
 
 	document.getElementById('nome').innerText = nome;
-	document.getElementById('cnpj').innerText = CNPJ;
+	document.getElementById('cnpj').innerText = cnpj;
 	document.getElementById('cede').innerText = cede;
-
-	MSGsucesso();
 
 	return true;
 }
 
-function get_empresa(cnpj) {
-	var resposta = null;
-
-	url = MashupPlatform.http.buildProxyURL('http://45.77.114.212:1026/v1/queryContext');
-	$.ajax({
-	    method: "POST",
-	    url: url,
-	    contentType: "application/json",
-	    cache: false,
-	    async: false,
-	    data: JSON.stringify(bind_query(cnpj, 'Empresa'))
-	})
-	.done(function(response) {
-	    if(response.errorCode === undefined)
-	    	resposta = response.contextResponses[0].contextElement;
-	})
-	.fail(function(response) {
-	    // vazio
-	  })
-	.always(function(response) {
-	   // vazio
-	});
-
-	return resposta;
-}
-
-function bind_query(id, tipo) {
-	return {
-		    "entities": [
-		        {
-		            "type": tipo,
-		            "isPattern": "false",
-		            "id": id
-		        }
-		    ]
-		};
+/*
+	Essa função recebe um vetor e busca por um elemento que contenha {name: "chave"}
+*/
+function busca(vetor, chave) {
+	for(var x = 0; x < vetor.length; x++) {
+		if(vetor[x].name == chave)
+			return vetor[x].value;
+	}
+	return null;
 }
 
 function MSGerro() {
 	document.getElementById('msgERRO').style.display = "block";
 	setTimeout(function(){document.getElementById('msgERRO').style.display = "none";}, 3000);
-}
-
-function MSGsucesso() {
-	document.getElementById('msgSUCESSO').style.display = "block";
-	setTimeout(function(){document.getElementById('msgSUCESSO').style.display = "none";}, 3000);
 }

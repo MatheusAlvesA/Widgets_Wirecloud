@@ -11,7 +11,7 @@
                     "value": "NOME_DA_EMPRESA"
                 },
                 {
-                    "name": "Cede",
+                    "name": "position",
                     "type": "geo:localization",
                     "value": "COORDENADAS_DA_CEDE"
                 },
