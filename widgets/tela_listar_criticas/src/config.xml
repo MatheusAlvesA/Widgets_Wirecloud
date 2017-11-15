@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<widget xmlns="http://wirecloud.conwet.fi.upm.es/ns/macdescription/1" vendor="Ver Criticas" name="tela_listar_criticas" version="0.1.0">
+
+    <details>
+        <title>Listar Criticas</title>
+        <homepage>http://45.77.114.212/</homepage>
+        <authors>Matheus Alves</authors>
+        <email>matheusalveseejam@gmail.com</email>
+        <image></image>
+        <smartphoneimage></smartphoneimage>
+        <description>Esta tela lista as criticas recebidas no inputendpoint</description>
+        <longdescription>DESCRIPTION.md</longdescription>
+        <changelog>doc/changelog.md</changelog>
+        <doc>doc/userguide.md</doc>
+        <license>MIT</license>
+        <issuetracker></issuetracker>
+    </details>
+
+    <requirements>
+    </requirements>
+
+    <preferences>
+    </preferences>
+
+    <wiring>
+    <inputendpoint name="criticas" type="text" label="Criticas" description="Essa entrada deve receber um vetor de criticas." actionlabel="Criticas" friendcode="Empresas"/>
+    <outputendpoint name="critica" type="text" label="Critica" description="Essa saida vai devolver uma critica selecionada." friendcode="Critica"/>
+    </wiring>
+
+    <contents src="index.html"/>
+    <rendering height="300px" width="30%"/>
+
+</widget>

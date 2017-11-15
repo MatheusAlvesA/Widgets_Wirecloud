@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<operator xmlns="http://wirecloud.conwet.fi.upm.es/ns/macdescription/1" vendor="Empresa2PoI" name="empresa_to_poi" version="0.1.0">
+
+    <details>
+        <title>Empresa para ponto</title>
+        <homepage>http://45.77.114.212</homepage>
+        <authors>Matheus Alves &lt;matheuseejam@gmail.com&gt;</authors>
+        <email>matheuseejam@gmail.com</email>
+        <image></image>
+        <smartphoneimage></smartphoneimage>
+        <description>Este operador converte uma empresa em seu ponto</description>
+        <longdescription>DESCRIPTION.md</longdescription>
+        <changelog>doc/changelog.md</changelog>
+        <doc>doc/userguide.md</doc>
+        <license>MIT</license>
+        <issuetracker></issuetracker>
+    </details>
+
+    <requirements>
+        <!-- Add any extra requirements here -->
+        <!-- <feature name="${feature-name}" /> -->
+    </requirements>
+
+    <preferences>
+    </preferences>
+
+    <wiring>
+        <inputendpoint name="empresa" type="text" label="Empresa" description="Essa entrada deve receber uma empresa." actionlabel="Empresa" friendcode="Empreasa"/>
+        <outputendpoint name="point" type="text" label="Ponto" description="Essa saida vai devolver um ponto com suas coordenadas." friendcode="poi"/>
+    </wiring>
+
+    <scripts>
+        <script src="js/main.js"/>
+    </scripts>
+
+</operator>
