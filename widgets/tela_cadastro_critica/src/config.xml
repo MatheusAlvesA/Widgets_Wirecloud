@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<widget xmlns="http://wirecloud.conwet.fi.upm.es/ns/macdescription/1" vendor="Cadastrar Critica" name="tela_cadastro_critica" version="0.1.0">
+
+    <details>
+        <title>Cadastrar critica</title>
+        <homepage>http://45.77.114.212</homepage>
+        <authors>Matheus Alves</authors>
+        <email>matheuseejam@gmail.com</email>
+        <image></image>
+        <smartphoneimage></smartphoneimage>
+        <description>Esta tela cadastrar uma critica para uma empresa</description>
+        <longdescription>DESCRIPTION.md</longdescription>
+        <changelog>doc/changelog.md</changelog>
+        <doc>doc/userguide.md</doc>
+        <license>MIT</license>
+        <issuetracker></issuetracker>
+    </details>
+
+    <requirements>
+    </requirements>
+
+    <preferences>
+    </preferences>
+
+    <wiring>
+        <inputendpoint name="empresa" type="text" label="Empresa" description="Essa entrada deve receber uma empresa que vai ser criticada" friendcode="Empresa"/>
+    </wiring>
+
+    <contents src="index.html"/>
+    <rendering height="300px" width="30%"/>
+
+</widget>
