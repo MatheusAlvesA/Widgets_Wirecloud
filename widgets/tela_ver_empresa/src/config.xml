@@ -24,7 +24,7 @@
 
     <wiring>
     <inputendpoint name="empresa" type="text" label="Empresa" description="Essa entrada deve receber uma empresa." actionlabel="Empresa" friendcode="Empreasa"/>
-    <outputendpoint name="criticas" type="text" label="Criticas" description="Essa saida vai devolver um vetor com os ids das criticas." friendcode="Criticas"/>
+    <outputendpoint name="cnpj" type="text" label="cnpj" description="Essa saida vai devolver o cnpj da empresa." friendcode="cnpj"/>
     </wiring>
 
     <contents src="index.html"/>

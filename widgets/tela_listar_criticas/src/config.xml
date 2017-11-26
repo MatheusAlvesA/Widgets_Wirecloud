@@ -23,7 +23,7 @@
     </preferences>
 
     <wiring>
-    <inputendpoint name="criticas" type="text" label="Criticas" description="Essa entrada deve receber um vetor de criticas." actionlabel="Criticas" friendcode="Empresas"/>
+    <inputendpoint name="cnpj" type="text" label="cnpj" description="Essa entrada deve receber um cnpj." actionlabel="cnpj" friendcode="cnpj"/>
     <outputendpoint name="critica" type="text" label="Critica" description="Essa saida vai devolver uma critica selecionada." friendcode="Critica"/>
     </wiring>
 

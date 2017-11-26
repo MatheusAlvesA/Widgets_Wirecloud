@@ -48,7 +48,7 @@ function consultar(r) {
 
 function push_criticas() {
 	if(empresa === null) return false;
-	MashupPlatform.wiring.pushEvent('criticas', JSON.stringify(busca(empresa.attributes, 'Criticas')));
+	MashupPlatform.wiring.pushEvent('cnpj', JSON.stringify(empresa.id));
 	return true;
 }
 

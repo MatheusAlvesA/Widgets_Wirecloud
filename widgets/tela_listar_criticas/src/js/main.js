@@ -13,13 +13,17 @@ window.onload = function () {
     new TelaListarCriticas();
 };
 
-critica = [];
-MashupPlatform.wiring.registerCallback('criticas', function(entity) {
-        criticas = JSON.parse(entity);
+criticas = [];
+MashupPlatform.wiring.registerCallback('cnpj', function(entity) {
+        let cnpj = JSON.parse(entity);
         $("#table_body").html('');
-        for(var x = 0; x < criticas.length; x++) {
-        	var critica = get_critica(criticas[x]);
-        	inserir_critica(busca(critica.attributes, 'nota'), busca(critica.attributes, 'Alvo'), critica.id);
+        let criticas_bruto = get_criticas();
+        for(var x = 0; x < criticas_bruto.length; x++) {
+        	if( busca(criticas_bruto[x].attributes, 'Alvo') == cnpj) {
+        		let critica = criticas_bruto[x];
+        		inserir_critica(busca(critica.attributes, 'nota'), busca(critica.attributes, 'Alvo'), critica.id);
+        		criticas.push(critica);
+        	}
         }
 });
 
@@ -57,8 +61,8 @@ function inserir_critica(nota, empresa, id) {
         return false;
  }
 
- function get_critica(id) {
-	var resposta = null;
+ function get_criticas() {
+	var resposta = [];
 
 	url = MashupPlatform.http.buildProxyURL('http://45.77.114.212:1026/v1/queryContext');
 	$.ajax({
@@ -67,11 +71,13 @@ function inserir_critica(nota, empresa, id) {
 	    contentType: "application/json",
 	    cache: false,
 	    async: false,
-	    data: JSON.stringify(make_busca(id))
+	    data: JSON.stringify(make_busca())
 	})
 	.done(function(response) {
 	    if(response.errorCode === undefined) {
-    		resposta = response.contextResponses[0].contextElement;
+	    	for(let x = 0; x < response.contextResponses.length; x++) {
+    			resposta[x] = response.contextResponses[x].contextElement;
+    		}
 	    }
 	})
 	.fail(function(response) {
@@ -84,13 +90,13 @@ function inserir_critica(nota, empresa, id) {
 	return resposta;
 }
 
-function make_busca(id) {
+function make_busca() {
 	return {
 		    "entities": [
 		        {
 		            "type": "Crítica",
-		            "isPattern": "false",
-		            "id": id
+		            "isPattern": "true",
+		            "id": '.*'
 		        }
 		    ]
 		};
