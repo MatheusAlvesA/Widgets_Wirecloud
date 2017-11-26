@@ -44,7 +44,7 @@ function inserir_critica(nota, empresa, id) {
     cols += '<td>'+nota+'</td>';
     cols += '<td>'+empresa+'</td>';
     cols += '<td>';
-    cols += '<button onclick="usar('+id+')" class="btn btn-primary">Usar</button>';
+    cols += '<button onclick="usar(\''+id+'\')" class="btn btn-primary">Usar</button>';
     cols += '</td>';		
     newRow.append(cols);
     $("#tabela").append(newRow);	

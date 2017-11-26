@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <title>Visualizar Critica</title>
+    </head>
+    <body style="padding-top: 10px; padding-left: 10px; padding-right: 10px;">
+
+      <div class="row">
+        <div role="main" class="col-md-6">
+            <b style="color: red; display: none;" id="msgERRO">Falha na leitura da critica!</b>
+        </div>
+        <div role="main" class="col-md-6">
+          <ul class="list-group">
+            <li class="list-group-item">Critico: <b id="nome"></b></li>
+            <li class="list-group-item">CNPJ: <b id="cnpj"></b></li>
+            <li class="list-group-item">Nota: <b id="nota"></b></li>
+          </ul>
+          <hr>
+          <p id="texto"></p>
+        </div>
+      </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="js/TelaVerCritica.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
