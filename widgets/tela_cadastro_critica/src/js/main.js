@@ -28,9 +28,9 @@ function preparar(r) {
 	}
 
 	var nome = busca(r.attributes, 'Nome');
-	var empresa_cnpj = r.id;
+	empresa_cnpj = r.id;
 
-	document.getElementById('textNome').innerText = nome;
+	document.getElementById('textNome').innerText = 'Empresa: '+nome;
 
 	$("#bnt_criticar").prop("disabled", false);
 
@@ -38,7 +38,37 @@ function preparar(r) {
 }
 
 function criticar() {
-	//todo
+    let user = document.getElementById('inputUSER').value;
+    let nota = document.getElementById('nota').options[document.getElementById('nota').selectedIndex].value;
+    let texto = document.getElementById('inputCRITICA').value;
+    if(user == '' || nota == '' || texto == '' || empresa_cnpj == '') {
+        MSGerro();
+        return false;
+    }
+
+    url = MashupPlatform.http.buildProxyURL('http://45.77.114.212:1026/v1/updateContext');
+    $.ajax({
+        method: "POST",
+        url: url,
+        contentType: "application/json",
+        cache: false,
+        async: false,
+        data: JSON.stringify(make_critica(empresa_cnpj, user, nota, texto))
+    })
+    .done(function(response) {
+        if(response.errorCode === undefined) {
+            MSGsucesso();
+            document.getElementById('inputUSER').value = ''
+            document.getElementById('inputCRITICA').value = '';
+        }
+    })
+    .fail(function(response) {
+        // vazio
+      })
+    .always(function(response) {
+       // vazio
+    });
+    return true;
 }
 
 /*
@@ -68,7 +98,7 @@ function make_critica(empresa, user, nota, texto) {
         {
             "type": "Crítica",
             "isPattern": "false",
-            "id": md5(texto),
+            "id": md5(user+Math.random()),
             "attributes": [
                 {
                     "name": "Texto",
