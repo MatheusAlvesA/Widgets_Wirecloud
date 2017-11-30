@@ -33,7 +33,7 @@ function inserir_empresa(nome, cnpj) {
     var cols = "";		
     cols += '<td>'+nome+'</td>';
     cols += '<td>';
-    cols += '<button onclick="usar('+cnpj+')" class="btn btn-primary">Usar</button>';
+    cols += '<button onclick="usar(\''+cnpj+'\')" class="btn btn-primary">Usar</button>';
     cols += '</td>';		
     newRow.append(cols);
     $("#tabela").append(newRow);	

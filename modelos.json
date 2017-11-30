@@ -12,7 +12,7 @@
                 },
                 {
                     "name": "position",
-                    "type": "geo:localization",
+                    "type": "geo:point",
                     "value": "COORDENADAS_DA_CEDE"
                 },
                 {
